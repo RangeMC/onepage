@@ -1,0 +1,69 @@
+.arruela {
+    height: 120px;
+    position: relative;
+    width: 120px;
+}
+
+.svg-container {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+}
+
+.circle {
+    cx: 50%;
+    cy: 50%;
+    r: 50;
+    fill: transparent;
+    stroke-width: 12px;
+}
+
+.circle-base {
+    animation: growUp ease-in-out 2.5s;
+    stroke: rgb(70, 68, 68);
+}
+
+.circle-bar-anarhia {
+    stroke-dasharray: 160 300;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+.circle-bar-vanilla {
+    stroke-dasharray: 160 300;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+.circle-bar-mg {
+    stroke-dasharray: 160 300;
+    stroke-linecap: round;
+    transform-origin: center;
+    transform: rotate(-90deg);
+}
+
+
+/* color */
+
+.green-bar {
+    stroke: #10C369;
+}
+
+.blue-bar {
+    stroke: #b3e5fc;
+}
+
+.orange-bar {
+    stroke: #e08c1c;
+}
+
+
+/* text */
+
+text {
+    font-size: 50px;
+    transform: translate(27%, 65%);
+    fill: aliceblue;
+}
