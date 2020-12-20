@@ -15,6 +15,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <script src="js/jquery-3.5.1.js"></script>
+    <script src="js/sweetalert2.all.min.js"></script>
+    <link rel="stylesheet" href="css/sweetalert2-dark.css">
+    <!-- <link rel="stylesheet" href="css/sweetalert2.min.css"> -->
+    <!-- Optional: include a polyfill for ES6 Promises for IE11 -->
+    <script src="https://cdn.jsdelivr.net/npm/promise-polyfill"></script>
 </head>
 <script>
     var url = "https://api.minetools.eu/ping/play.rangemc.ovh/25565";
@@ -36,8 +41,23 @@
         <i class="fas fa-arrow-up"></i>
     </a>
 
-    <a onclick="prompt('Скопируйте наш IP адрес и вставьте в ваш клиент:','play.rangemc.ovh'); return false;"" class="d-block p-3 text-center text-white bg-primary b4b sticky-top"><div id="status">Загружаем данные о сервере...</div></a>
+    <a onclick="copyServerIP();" class="d-block p-3 text-center text-white bg-primary b4b sticky-top"><div id="status">Загружаем данные о сервере...</div></a>
 
+    <script>
+        function copyToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        }
+        
+        function copyServerIP() {
+            copyToClipboard('play.rangemc.ovh');
+            Swal.fire('IP-адрес скопирован!','Чтобы начать игру, скачайте клиент нужной версии. Инструкцию по началу игры можно посмотреть <a href="https://wiki.rangemc.ovh/docs/getting-started/">здесь</a>.','success');
+        }
+    </script>
     <section>
         <nav class="navbar navbar-expand-lg">
             <div class="container">
