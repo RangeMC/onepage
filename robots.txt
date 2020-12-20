@@ -1,0 +1,5 @@
+User-agent: *
+Disallow: /404.html
+Disallow: /donatesuccess.html
+Disallow: /donatepending.html
+Disallow: /donatefailure.html
