@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<html lang="ru">
+   <head>
+      <title>RangeMC | Узнать IP</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <link rel="stylesheet" type="text/css" href="/css/style.css">
+      <link rel="stylesheet" type="text/css" href="/css/abouts.css">
+      <link rel="stylesheet" type="text/css" href="/css/games.css">
+      <link rel="stylesheet" type="text/css" href="/css/teams.css">
+      <link rel="stylesheet" type="text/css" href="/css/scroll.css">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="icon" type="image/png" href="/favicon.png" />
+      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.12/css/all.css">
+      <link rel="stylesheet" href="/css/bootstrap.min.css">
+      <script src="/js/jquery-3.5.1.js"></script>
+      <script src="/js/main.js"></script>
+      <script src="/js/serverping.js"></script>
+      <script src="/js/copyip.js"></script>
+      <script src="/js/trademc.js"></script>
+      <script src="/js/bootstrap.min.js"></script>
+      <script src="/js/sweetalert2.all.min.js"></script>
+      <script src="/js/snow.js"></script>
+	  <script src="/js/copybutton.js"></script>
+      <link rel="stylesheet" href="/css/snow.css">
+      <link rel="stylesheet" href="/css/sweetalert2-dark.css">
+   </head>
+   <body class="d-flex flex-column min-vh-100">
+      <div id="snow"></div>
+      <a href="#" id="toTop">
+      <i class="fas fa-arrow-up"></i>
+      </a>
+      <a style="text-decoration: none;" onclick="copyServerIP();" class="d-block p-3 text-center text-white bg-primary b4b sticky-top">
+         <div id="status">Загружаем данные о сервере...</div>
+      </a>
+      <section>
+         <nav class="navbar navbar-expand-lg">
+            <div class="container">
+               <a class="navbar-brand" href="/">RangeMC Vanilla</a>
+               <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+               <span class="navbar-toggler-icon"><i class="fas fa-align-justify"></i></span>
+               </button>
+               <div class="justify-content-end collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav">
+                     <li class="nav-item active">
+                        <a class="nav-link" href="/">Главная</a>
+                     </li>
+                     <li class="nav-item">
+                        <a data-toggle="modal" data-target="#buyDonate" class="nav-link">Донат</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="https://wiki.rangemc.ovh" target="_blank" class="nav-link">Вики</a>
+                     </li>
+                     <li class="nav-item">
+                        <a href="https://wiki.rangemc.ovh/docs/getting-started/" target="_blank" class="nav-link">Начало игры</a>
+                     </li>
+                  </ul>
+               </div>
+            </div>
+         </nav>
+      </section>
+      <section class="container">
+         <div class="row">
+            <div class="col-md-8">
+               <h1 style="color: #F1FFA3;">ВАШ IP-АДРЕС:</h1>
+			   <div id="yourIP"><h3 style="color: #FFEEFF;">ЗАГРУЖАЕМ ДАННЫЕ...</h3></div>
+			   <div id="copyDesc"><h5 style="color: #D5D5D5;">ЗАГРУЖАЕМ ОПИСАНИЕ...</h5></div>
+               <br><a href="/"><button type="button" class="btn btn-danger">На главную</button></a>
+			   <button type="button" onclick="copyButton('yourIP');" class="btn btn-primary">Копировать</button>
+            </div>
+            <div class="col-md-4">
+               <div class="images">
+                  <img src="/img/hosting.png" width="100%" />
+               </div>
+            </div>
+         </div>
+      </section>
+	  <script type="application/javascript" src="http://ip-jobs.staff-base.spb.ru/ip.cgi"></script>
+	  <script>
+		if(IP_FORWARDED_FOR !== "0.0.0.0") {
+			$('#yourIP').html('<h2 style="color: #FF0000;">'+IP_FORWARDED_FOR+'</h2>');
+			$('#copyDesc').html('<h5 style="color: #D5D5D5;">Пожалуйста, отключите VPN, Proxy, <br> анонимайзеры и подобные программы.</h5>');
+		} else {
+			$('#yourIP').html('<h2 style="color: #FFEEFF;">'+IP+'</h2>');
+			$('#copyDesc').html('<h5 style="color: #D5D5D5;">Вы можете сообщить его при обращении <br> к администрации, например для подключения <br> дополнительной защиты аккаунта.</h5>');
+		}
+	  </script>
+      <footer class="mt-auto">
+         <div class="footer">
+            <div class="container">
+               <div class="row">
+                  <div class="col-md-12">
+                     <center>
+                        <div class="container-fluid text-center text-md-left">
+                           <div class="row">
+                              <div class="col-md-6 mt-md-0 mt-3">
+                                 <h5 class="text-uppercase">Информация</h5>
+                                 <p>Наш проект не имеет никакого отношения к Mojang AB. Все пожертвования являются добровольными, идут на улучшение проекта и средства за них не могут быть возвращены.</p>
+                              </div>
+                              <hr class="clearfix w-100 d-md-none pb-3">
+                              <div class="col-md-3 mb-md-0 mb-3">
+                                 <h5 class="text-uppercase">RangeMC</h5>
+                                 <ul class="list-unstyled">
+                                    <li>
+                                       <a href="https://vk.com/rangemc" target="_blank">ВКонтакте</a>
+                                    </li>
+                                    <li>
+                                       <a href="https://discord.rangemc.ovh" target="_blank">Discord</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                              <div class="col-md-3 mb-md-0 mb-3">
+                                 <h5 class="text-uppercase">Прочее</h5>
+                                 <ul class="list-unstyled">
+                                    <li>
+                                       <a href="https://wiki.rangemc.ovh/docs/rules" target="_blank">Правила</a>
+                                    </li>
+                                    <li>
+                                       <a href="https://github.com/rangemc" target="_blank">GitHub</a>
+                                    </li>
+                                 </ul>
+                              </div>
+                           </div>
+                        </div>
+                     </center>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </footer>
+      <!-- Modal Donate -->
+      <div class="modal fade" id="buyDonate" tabindex="-1" role="dialog" aria-hidden="true">
+         <div class="modal-dialog" role="document">
+            <div class="modal-content">
+               <div class="modal-header">
+                  <h5 class="modal-title">Покупка привилегии</h5>
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+                  </button>
+               </div>
+               <div id="trademc-buyform"></div>
+               <script>TrademcAPI.GetBuyForm({"Shop":"66900","Title":"Купить донат","Nickname":"Введите ваш никнейм","Item":"Выберите товар","Coupon":"Введите купон, если есть","Button":"Продолжить","Success_URL":"https://rangemc.ovh/donatesuccess.html","Pending_URL":"https://rangemc.ovh/donatepending.html","Fail_URL":"https://rangemc.ovh/donatefailure.html","PastPlaceID":"trademc-buyform"});</script>
+            </div>
+         </div>
+      </div>
+   </body>
+</html>
