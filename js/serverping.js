@@ -1,4 +1,4 @@
-var url = "https://api.minetools.eu/ping/play.rangemc.ovh/25565";
+var url = "https://ping.alexeylesin.ru/api/v1/minecraft/ping/?address=play.rangemc.ovh&port=25565";
    
    $.getJSON(url, function(r) {
        //data is the JSON string
